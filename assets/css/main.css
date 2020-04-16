@@ -1751,6 +1751,11 @@
 			overflow-x: auto;
 		}
 
+	var {
+    display: inline;
+		font-family: "Courier New", monospace;
+	}
+
 	hr {
 		border: 0;
 		border-bottom: solid 1px rgba(144, 144, 144, 0.25);

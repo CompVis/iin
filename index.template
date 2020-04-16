@@ -52,13 +52,12 @@
                                 style="margin-bottom:2em; box-shadow:0 0;
                                 text-align:justify">
                       <img src="images/overview.jpg" alt="" style="border:0px solid black"/>
-                      <p>
-                      Our Invertible Interpretation Network <b><i>T</i></b> can be applied
+                      Our Invertible Interpretation Network <var>T</var> can be applied
                       to arbitrary existing models. Its invertibility
-                      guarantees that the translation from <b><i>z</i></b> to <b><i>z&#771;</i></b> does
+                      guarantees that the translation from <var>z</var> to
+                      <var>z&#771;</var> does
                       not affect the performance of the model to be
                       interpreted.
-                      </p>
                     </div>
 
                     <div class="image fit captioned align-center"

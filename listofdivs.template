@@ -29,8 +29,9 @@
 									<img src="images/animalswap.jpg" alt="" />
                   </a>
                   <h3>Transfer on AnimalFaces</h3>
-                  We combine &#771z<sub>0</sub> (residual) of the
-                  target image (leftmost column) with &#771z<sub>1</sub> (animal class) of the source
+                  We combine <var>z&#771;<sub>0</sub></var> (residual) of the
+                  target image (leftmost column) with
+                  <var>z&#771;<sub>1</sub></var> (animal class) of the source
                   image (top row), resulting in a transfer of animal type from source to
                   target.
 								</div>
@@ -40,7 +41,7 @@
 									<img src="images/linear.jpg" alt="" />
                   </a>
 									<h3>Linearization of Latent Space</h3>
-                  The inverse of our interpretation network T maps linear walks
+                  The inverse of our interpretation network <var>T</var> maps linear walks
                   in the interpretable domain back to nonlinear walks on the data manifold in
                   the encoder space, which get decoded to meaningful images (bottom right). In contrast,
                   decoded images of linear walks in the encoder space contain ghosting
@@ -52,11 +53,13 @@
 									<img src="images/fid.jpg" alt="" />
                   </a>
 									<h3>Turning Autoencoders into Generative Models</h3>
-                  Applied to latent representations z of an autoencoder, our
+                  Applied to latent representations <var>z</var> of an autoencoder, our
                   approach enables semantic image analogies. After sampling an interpretable
-                  representation (&#771z<sub>k</sub>), we use the inverse of T to transform it to
-                  a latent representation z = T<sup>-1</sup>((&#771z<sub>k</sub>)) of the
-                  autoencoder and obtain a sampled image after decoding z. Our approach
+                  representation <var>z&#771;</var>, we use the
+                  inverse of <var>T</var> to transform it to
+                  a latent representation <var>z=T<sup>-1</sup>(z&#771;)</var> of the
+                  autoencoder and obtain a sampled image after decoding
+                  <var>z</var>. Our approach
                   significantly improves FID scores compared to previous autoencoder based
                   generative models and simple GAN models.
 								</div>
@@ -66,11 +69,14 @@
 									<img src="images/analogy.jpg" alt="" />
                   </a>
 									<h3>Autoencoder Analogies</h3>
-                  Applied to latent representations z of an autoencoder, our
-                  approach enables semantic image analogies. After transforming z to disentangled
-                  semantic factors (&#771z<sub>k</sub>) = T(z), we replace &#771z<sub>k</sub> of
-                  the target image (leftmost column), with &#771z<sub>k</sub> of the source image
-                  (top row).  From left to right: k=1 (digit), k=2 (color), k=0 (residual).
+                  Applied to latent representations <var>z</var> of an autoencoder, our
+                  approach enables semantic image analogies. After transforming
+                  <var>z</var> to disentangled
+                  semantic factors <var>(z&#771;<sub>k</sub>)=T(z)</var>, we
+                  replace <var>z&#771;<sub>k</sub></var> of
+                  the target image (leftmost column), with
+                  <var>z&#771;<sub>k</sub></var> of the source image
+                  (top row). From left to right: k=1 (digit), k=2 (color), k=0 (residual).
 								</div>
 ==========
 								<div class="image fit captioned align-just">
@@ -78,12 +84,14 @@
 									<img src="images/walk.jpg" alt="" />
                   </a>
 									<h3>Semantic Manipulations of Representations</h3>
-                  Modifications of latent representations z of a CMNIST
+                  Modifications of latent representations <var>z</var> of a CMNIST
                   classifier visualized through UMAP embeddings.
                   Colors
-                  of dots represent classes of test examples.  We map latent representations z to
-                  interpretable representations &#771z=T(z), where we perform a random walk in
-                  one of the factors &#771z<sub>k</sub>. Using T<sup>-1</sup>, this random walk
+                  of dots represent classes of test examples.  We map latent
+                  representations <var>z</var> to
+                  interpretable representations <var>z&#771;=T(z)</var>, where we perform a random walk in
+                  one of the factors <var>z&#771;<sub>k</sub></var>. Using
+                  <var>T<sup>-1</sup></var>, this random walk
                   is mapped back to the latent space and shown as black crosses connected by gray
                   lines.  On the left, a random walk in the digit factor jumps between digit
                   clusters, whereas on the right, a random walk in the color factor stays
@@ -97,11 +105,13 @@
 									<h3>Network Response Analysis</h3>
                   Left: Output variance per class of a digit classifier on
                   ColorMNIST, assessed via distribution of class
-                  predictions. T disentangles &#771z<sub>0</sub> (residual), &#771z<sub>1</sub>
-                  (digit) and &#771z<sub>2</sub> (color).
+                  predictions. <var>T</var> disentangles <var>z&#771;<sub>0</sub></var>
+                  (residual), <var>z&#771;<sub>1</sub></var>
+                  (digit) and <var>z&#771;<sub>2</sub></var> (color).
                   The distribution of predicted classes is indeed not sensitive to
                   variations in the factor color, but turns out to be quite
                   responsive when altering the digit representation.
                   Right: 1d disentangled UMAP
-                  embeddings of &#771z<sub>1</sub> and &#771z<sub>2</sub>.
+                  embeddings of <var>z&#771;<sub>1</sub></var> and
+                  <var>z&#771;<sub>2</sub></var>.
 								</div>
