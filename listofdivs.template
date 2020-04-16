@@ -1,0 +1,107 @@
+								<div class="image fit captioned align-just">
+                  <div class="videocontainer">
+                  <video poster="images/celeba.jpg" controls class="videothing">
+                   <source src="images/celeba.mp4" type="video/mp4">
+                   Your browser does not support the video tag.
+                  </video>
+                  </div>
+                  <h3>Semantic image modifications and embeddings on CelebA</h3>
+                  We interpolate within individual semantic concepts and
+                  visualize representations embedded onto semantically-meaningful
+                  dimensions.
+								</div>
+==========
+								<div class="image fit captioned align-just">
+                  <div class="videocontainer">
+                  <video poster="images/mnist.jpg" controls class="videothing">
+                   <source src="images/mnist.mp4" type="video/mp4">
+                   Your browser does not support the video tag.
+                  </video>
+                  </div>
+                  <h3>Semantic image modifications and embeddings on CMNIST</h3>
+                  We interpolate within individual semantic concepts and
+                  visualize representations embedded onto semantically-meaningful
+                  dimensions.
+								</div>
+==========
+								<div class="image fit captioned align-just">
+                  <a href="images/animalswap.jpg">
+									<img src="images/animalswap.jpg" alt="" />
+                  </a>
+                  <h3>Transfer on AnimalFaces</h3>
+                  We combine &#771z<sub>0</sub> (residual) of the
+                  target image (leftmost column) with &#771z<sub>1</sub> (animal class) of the source
+                  image (top row), resulting in a transfer of animal type from source to
+                  target.
+								</div>
+==========
+								<div class="image fit captioned align-just">
+                  <a href="images/linear.jpg">
+									<img src="images/linear.jpg" alt="" />
+                  </a>
+									<h3>Linearization of Latent Space</h3>
+                  The inverse of our interpretation network T maps linear walks
+                  in the interpretable domain back to nonlinear walks on the data manifold in
+                  the encoder space, which get decoded to meaningful images (bottom right). In contrast,
+                  decoded images of linear walks in the encoder space contain ghosting
+                  artifacts (bottom left).
+								</div>
+==========
+								<div class="image fit captioned align-just">
+                  <a href="images/fid.jpg">
+									<img src="images/fid.jpg" alt="" />
+                  </a>
+									<h3>Turning Autoencoders into Generative Models</h3>
+                  Applied to latent representations z of an autoencoder, our
+                  approach enables semantic image analogies. After sampling an interpretable
+                  representation (&#771z<sub>k</sub>), we use the inverse of T to transform it to
+                  a latent representation z = T<sup>-1</sup>((&#771z<sub>k</sub>)) of the
+                  autoencoder and obtain a sampled image after decoding z. Our approach
+                  significantly improves FID scores compared to previous autoencoder based
+                  generative models and simple GAN models.
+								</div>
+==========
+								<div class="image fit captioned align-just">
+                  <a href="images/analogy.jpg">
+									<img src="images/analogy.jpg" alt="" />
+                  </a>
+									<h3>Autoencoder Analogies</h3>
+                  Applied to latent representations z of an autoencoder, our
+                  approach enables semantic image analogies. After transforming z to disentangled
+                  semantic factors (&#771z<sub>k</sub>) = T(z), we replace &#771z<sub>k</sub> of
+                  the target image (leftmost column), with &#771z<sub>k</sub> of the source image
+                  (top row).  From left to right: k=1 (digit), k=2 (color), k=0 (residual).
+								</div>
+==========
+								<div class="image fit captioned align-just">
+                  <a href="images/walk.jpg">
+									<img src="images/walk.jpg" alt="" />
+                  </a>
+									<h3>Semantic Manipulations of Representations</h3>
+                  Modifications of latent representations z of a CMNIST
+                  classifier visualized through UMAP embeddings.
+                  Colors
+                  of dots represent classes of test examples.  We map latent representations z to
+                  interpretable representations &#771z=T(z), where we perform a random walk in
+                  one of the factors &#771z<sub>k</sub>. Using T<sup>-1</sup>, this random walk
+                  is mapped back to the latent space and shown as black crosses connected by gray
+                  lines.  On the left, a random walk in the digit factor jumps between digit
+                  clusters, whereas on the right, a random walk in the color factor stays
+                  (mostly) within the digit cluster it starts from.
+								</div>
+==========
+								<div class="image fit captioned align-just">
+                  <a href="images/sensitivity.jpg">
+									<img src="images/sensitivity.jpg" alt="" />
+                  </a>
+									<h3>Network Response Analysis</h3>
+                  Left: Output variance per class of a digit classifier on
+                  ColorMNIST, assessed via distribution of class
+                  predictions. T disentangles &#771z<sub>0</sub> (residual), &#771z<sub>1</sub>
+                  (digit) and &#771z<sub>2</sub> (color).
+                  The distribution of predicted classes is indeed not sensitive to
+                  variations in the factor color, but turns out to be quite
+                  responsive when altering the digit representation.
+                  Right: 1d disentangled UMAP
+                  embeddings of &#771z<sub>1</sub> and &#771z<sub>2</sub>.
+								</div>
