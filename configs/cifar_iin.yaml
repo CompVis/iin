@@ -1,0 +1,40 @@
+experiment_name: cifar_iin
+
+datasets:
+  train: iin.data.CIFAR10Train
+  validation: iin.data.CIFAR10Test
+
+fid:
+  batch_size: 50
+fid_stats:
+  pre_calc_stat_path: "fid_stats/cifar.npz"
+
+
+first_stage:
+  checkpoint: logs/2020-04-24T09-47-43_cifar_ae/train/checkpoints/model-534000.ckpt
+  model: iin.models.ae.Model
+  subconfig:
+    Model:
+      deterministic: false
+      in_channels: 3
+      in_size: 32
+      n_down: 4
+      norm: an
+      z_dim: 64
+
+model: iin.models.iin.VectorTransformer
+Transformer:
+  in_channel: 64
+  n_flow: 12
+  hidden_depth: 2
+  hidden_dim: 512
+  
+
+loss: iin.losses.iin.Loss
+
+iterator: iin.iterators.iin.Trainer
+base_learning_rate: 4.5e-06
+batch_size: 25
+log_freq: 1000
+num_epochs: 300
+decay_start: 505001

@@ -1,0 +1,39 @@
+experiment_name: celeba_iin
+
+datasets:
+  train: iin.data.CelebATrain
+  validation: iin.data.CelebATest
+
+fid:
+  batch_size: 50
+fid_stats:
+  pre_calc_stat_path: "fid_stats/celeba.npz"
+
+first_stage:
+  checkpoint: logs/2020-04-23T23-43-25_celeba_ae/train/checkpoints/model-572968.ckpt
+  model: iin.models.ae.Model
+  subconfig:
+    Model:
+      deterministic: false
+      in_channels: 3
+      in_size: 64
+      n_down: 4
+      norm: an
+      z_dim: 64
+
+model: iin.models.iin.VectorTransformer
+Transformer:
+  in_channel: 64
+  n_flow: 12
+  hidden_depth: 2
+  hidden_dim: 512
+  
+
+loss: iin.losses.iin.Loss
+
+iterator: iin.iterators.iin.Trainer
+base_learning_rate: 4.5e-06
+decay_start: 505001
+batch_size: 25
+log_freq: 1000
+num_epochs: 100

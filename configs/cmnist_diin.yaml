@@ -1,0 +1,43 @@
+experiment_name: cmnist_diin
+
+datasets:
+  train: iin.data.ColorfulMNISTTrain
+  validation: iin.data.ColorfulMNISTTest
+
+fid:
+  batch_size: 50
+fid_stats:
+  pre_calc_stat_path: "fid_stats/cmnist.npz"
+
+first_stage:
+  checkpoint: logs/2020-04-27T22-55-44_cmnist_ae/train/checkpoints/model-120000.ckpt
+  model: iin.models.ae.Model
+  subconfig:
+    Model:
+      deterministic: false
+      in_channels: 3
+      in_size: 32
+      n_down: 4
+      norm: an
+      z_dim: 64
+
+model: iin.models.iin.FactorTransformer
+Transformer:
+  n_factors: 3
+  in_channel: 64
+  n_flow: 12
+  hidden_depth: 2
+  hidden_dim: 512
+  
+
+loss: iin.losses.iin.FactorLoss
+Loss:
+  rho: 0.975
+
+iterator: iin.iterators.iin.FactorTrainer
+base_learning_rate: 4.5e-06
+batch_size: 25
+log_freq: 1000
+num_epochs: 50
+decay_start: 100001
+

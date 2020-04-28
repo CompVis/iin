@@ -1,0 +1,34 @@
+experiment_name: fashionmnist_ae
+
+datasets:
+  train: iin.data.FashionMNISTTrain
+  validation: iin.data.FashionMNISTTest
+
+fid:
+  batch_size: 50
+fid_stats:
+  pre_calc_stat_path: "fid_stats/fashionmnist.npz"
+
+model: iin.models.ae.Model
+Model:
+  deterministic: false
+  in_channels: 1
+  in_size: 32
+  n_down: 4
+  norm: an
+  z_dim: 64
+
+loss: iin.losses.ae.LossPND
+Loss:
+  calibrate: true
+  disc_in_channels: 1
+  disc_start: 25001
+  logvar_init: 0.0
+  perceptual_weight: 1.0
+
+iterator: iin.iterators.ae.Trainer
+base_learning_rate: 4.5e-06
+batch_size: 25
+log_freq: 1000
+num_epochs: 50
+decay_start: 100001
