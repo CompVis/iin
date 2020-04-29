@@ -9,7 +9,7 @@ PyTorch code accompanying the [CVPR 2020](http://cvpr2020.thecvf.com/) paper
 \* equal contribution
 
 ![teaser](assets/mnist.gif)<br/>
-[arXiv](https://arxiv.org/) | [BibTeX](#bibtex) | [Project Page](https://compvis.github.io/iin/)
+[arXiv](https://arxiv.org/abs/2004.13166) | [BibTeX](#bibtex) | [Project Page](https://compvis.github.io/iin/)
 
 
 Table of Contents
