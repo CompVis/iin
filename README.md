@@ -113,7 +113,7 @@ checkpoint instead of the last one.
 To download (~2.2 GB) and extract pretrained models, run
 
 ```
-wget --trust-server-names https://heibox.uni-heidelberg.de/f/ef7566f564dc42858b9
+wget --trust-server-names https://heibox.uni-heidelberg.de/f/ef7566f564dc42858b90/?dl=1
 tar xzf logs.tar.gz
 ```
 
