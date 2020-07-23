@@ -73,8 +73,39 @@ where `<dataset>` is one of `mnist`, `fashionmnist`, `cifar`, `celeba`,
 edflow -b configs/<dataset>_ae.yaml configs/project.yaml -t
 ```
 
+###
+To train a classifier on `ColourfulMNIST, run
+
+```
+edflow -b configs/cmnist_clf.yaml -t
+```
+
+Once you have a checkpoint, you can estimate factor dimensionalities using
+
+```
+edflow -b configs/cmnist_clf.yaml configs/cmnist_dimeval.yaml -c <path to .ckpt>
+```
+
+For the pretrained classifier, this gives
+
+```
+[INFO] [dim_callback]: estimated factor dimensionalities: [22, 11, 31]
+```
+
+and to compare this to an autoencoder, run
+
+```
+edflow -b configs/cmnist_ae.yaml configs/cmnist_dimeval.yaml -c <path to cmnist ae .ckpt>
+```
+
+which gives
+
+```
+[INFO] [dim_callback]: estimated factor dimensionalities: [13, 17, 34]
+```
+
 ### Invertible Interpretation Networks
-#### Unsupervised
+#### Unsupervised on AE
 To train unsupervised invertible interpretation networks, run
 
 ```
@@ -93,7 +124,15 @@ For supervised, disentangling IINs, run
 edflow -b configs/<dataset>_diin.yaml [configs/project.yaml] -t
 ```
 
-where `<dataset>` is one of `cmnist`, `celeba`.
+where `<dataset>` is one of `cmnist` or `celeba`, or run
+
+```
+edflow -b configs/cmnist_clf_diin.yaml [configs/project.yaml] -t
+```
+
+to train a dIIN on top of a classifier, which factor dimensionalities as
+estimated above (dimensionalities of factors can be adjusted via the
+`Transformer/factor_config` configuration entry).
 
 
 ## Evaluation

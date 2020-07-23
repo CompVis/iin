@@ -126,6 +126,8 @@ class FactorTrainer(Trainer):
             self.update_lr()
 
         def log_op():
+            if not hasattr(self.model, "decode"):
+                return None
             with torch.no_grad():
                 for k in ["example1", "example2"]:
                     log_dict["images"][k] = inputs_factor[k]

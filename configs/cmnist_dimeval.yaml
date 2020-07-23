@@ -1,0 +1,10 @@
+experiment_name: cmnist_dimeval
+
+datasets:
+  train: iin.data.ColorfulMNISTTrain
+  validation: iin.data.ColorfulMNISTTest
+n_classes: 10
+
+iterator: iin.iterators.base.DimEvaluator
+batch_size: 25
+num_steps: 1

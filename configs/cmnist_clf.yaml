@@ -1,0 +1,21 @@
+experiment_name: cmnist_clf
+
+datasets:
+  train: iin.data.SingleColorfulMNISTTrain
+  validation: iin.data.SingleColorfulMNISTTest
+n_classes: 10
+
+model: iin.models.clf.Model
+Model:
+  in_channels: 3
+  in_size: 32
+  n_down: 4
+  norm: an
+  z_dim: 64
+
+iterator: iin.iterators.clf.Trainer
+base_learning_rate: 4.5e-06
+batch_size: 25
+log_freq: 1000
+num_epochs: 50
+decay_start: 100001

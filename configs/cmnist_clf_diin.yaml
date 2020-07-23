@@ -1,0 +1,40 @@
+experiment_name: cmnist_diin
+
+datasets:
+  train: iin.data.ColorfulMNISTTrain
+  validation: iin.data.ColorfulMNISTTest
+
+first_stage:
+  checkpoint: logs/2020-07-23T13-19-33_cmnist_clf/train/checkpoints/model-120000.ckpt
+  model: iin.models.clf.Model
+  subconfig:
+    n_classes: 10
+    Model:
+      in_channels: 3
+      in_size: 32
+      n_down: 4
+      norm: an
+      z_dim: 64
+
+model: iin.models.iin.FactorTransformer
+Transformer:
+  n_factors: 3
+  in_channel: 64
+  n_flow: 12
+  hidden_depth: 2
+  hidden_dim: 512
+  factor_config:
+    - 22
+    - 11
+    - 31
+
+loss: iin.losses.iin.FactorLoss
+Loss:
+  rho: 0.975
+
+iterator: iin.iterators.iin.FactorTrainer
+base_learning_rate: 4.5e-06
+batch_size: 25
+log_freq: 1000
+num_epochs: 50
+decay_start: 100001

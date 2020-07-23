@@ -128,6 +128,7 @@ class BaseFactorCelebA(BaseCelebA):
         self.neg_attribute_choices = [np.where(self.labels["attributes"][:,attridx]==-1)[0]
                 for attridx in self.attribute_indices]
         self.n_factors = len(self.attributes)+1
+        self.residual_index = len(self.attributes)
 
     def get_factor_idx(self, i):
         factor = self.prng.choice(len(self.attributes))
@@ -218,6 +219,8 @@ class ColorfulMNISTBase(DatasetMixin):
 class ColorfulMNISTTrain(ColorfulMNISTBase, PRNGMixin):
     def __init__(self, config):
         self.data = MNISTTrain(config)
+        self.n_factors = 3
+        self.residual_index = 2
 
 
 class ColorfulMNISTTest(ColorfulMNISTBase):
@@ -228,6 +231,8 @@ class ColorfulMNISTTest(ColorfulMNISTBase):
         self.same_idx = [ColorfulMNISTBase.get_same_idx(self, i) for i in range(len(self))]
         self.other_idx = [ColorfulMNISTBase.get_other_idx(self, i) for i in range(len(self))]
         self.color = [ColorfulMNISTBase.get_color(self, i) for i in range(len(self))]
+        self.n_factors = 3
+        self.residual_index = 2
 
     def get_factor(self, i):
         return self.factor[i]
