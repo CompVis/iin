@@ -73,8 +73,8 @@ where `<dataset>` is one of `mnist`, `fashionmnist`, `cifar`, `celeba`,
 edflow -b configs/<dataset>_ae.yaml configs/project.yaml -t
 ```
 
-###
-To train a classifier on `ColourfulMNIST, run
+### Classifiers
+To train a classifier on `ColorfulMNIST`, run
 
 ```
 edflow -b configs/cmnist_clf.yaml -t
