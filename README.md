@@ -130,7 +130,7 @@ where `<dataset>` is one of `cmnist` or `celeba`, or run
 edflow -b configs/cmnist_clf_diin.yaml [configs/project.yaml] -t
 ```
 
-to train a dIIN on top of a classifier, which factor dimensionalities as
+to train a dIIN on top of a classifier, with factor dimensionalities as
 estimated above (dimensionalities of factors can be adjusted via the
 `Transformer/factor_config` configuration entry).
 
