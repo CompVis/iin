@@ -19,6 +19,7 @@ Table of Contents
 * [Data](#data)
 * [Training](#training)
    * [Autoencoders](#autoencoders)
+   * [Classifiers](#classifiers)
    * [Invertible Interpretation Networks](#invertible-interpretation-networks)
       * [Unsupervised](#unsupervised)
       * [Supervised](#supervised)
