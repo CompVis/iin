@@ -150,10 +150,10 @@ checkpoint instead of the last one.
 
 
 ## Pretrained Models
-To download (~2.2 GB) and extract pretrained models, run
+Download [`logs.tar.gz`](https://heibox.uni-heidelberg.de/f/0c76b38bf4274448b8e9/)
+(~2.2 GB) and extract the pretrained models:
 
 ```
-wget --trust-server-names https://heibox.uni-heidelberg.de/f/ef7566f564dc42858b90/?dl=1
 tar xzf logs.tar.gz
 ```
 
